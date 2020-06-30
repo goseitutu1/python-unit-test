@@ -65,7 +65,7 @@ class ItemResourceTesting(unittest.TestCase):
     @patch('item_resources.requests') #Patching the request target from 'item_resources' file.   
     def test_delete_item_by_name_when_connect_exception_raised(self, mock_requests):
         mock_requests.delete.side_effect = ConnectionError()
-        self.assertEqual("Connection error occurred. Try Again.", self.Item.delete_item_by_name('car'))
+        self.assertEqual("Connection error occurred. Try Again", self.Item.delete_item_by_name('car'))
 
 
 if __name__ == '__main__':   
